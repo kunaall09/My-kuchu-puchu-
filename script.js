@@ -5,6 +5,51 @@ const question1 = document.getElementById("question1");
 const question2 = document.getElementById("question2");
 const mainPage = document.getElementById("mainPage");
 
+function showPage(page){
+  passwordPage.classList.remove("active");
+  question1.classList.remove("active");
+  question2.classList.remove("active");
+  mainPage.classList.remove("active");
+  page.classList.add("active");
+}
+
+function checkPassword(){
+  const value = document.getElementById("passwordInput").value.trim();
+
+  if(value === password){
+    showPage(question1);
+  }else{
+    document.getElementById("passwordError").innerText = "Wrong Password ❤️";
+  }
+}
+
+function checkAnswer1(){
+  const ans = document.getElementById("answer1").value.trim().toLowerCase();
+
+  if(ans === "korea"){
+    showPage(question2);
+  }else{
+    document.getElementById("answer1Error").innerText = "Hint: Korea ❤️";
+  }
+}
+
+function checkAnswer2(){
+  const ans = document.getElementById("answer2").value.trim().toLowerCase();
+
+  if(ans.includes("jaan") &&
+    (ans.includes("jada") || ans.includes("jyada") || ans.includes("zyada"))){
+      showPage(mainPage);
+  }else{
+      document.getElementById("answer2Error").innerText = "Think Again ❤️";
+  }
+}
+const password = "010123";
+
+const passwordPage = document.getElementById("passwordPage");
+const question1 = document.getElementById("question1");
+const question2 = document.getElementById("question2");
+const mainPage = document.getElementById("mainPage");
+
 function showPage(page) {
     passwordPage.classList.remove("active");
     question1.classList.remove("active");
