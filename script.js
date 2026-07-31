@@ -68,3 +68,44 @@ function createHearts(){
     },400);
 
       }
+
+function createConfetti() {
+
+    for (let i = 0; i < 120; i++) {
+
+        const confetti = document.createElement("div");
+
+        confetti.innerHTML = ["❤️","💖","💕","🌹","✨"][Math.floor(Math.random()*5)];
+
+        confetti.style.position = "fixed";
+        confetti.style.left = Math.random()*100 + "vw";
+        confetti.style.top = "-20px";
+        confetti.style.fontSize = (16 + Math.random()*20) + "px";
+        confetti.style.zIndex = "9999";
+        confetti.style.pointerEvents = "none";
+        confetti.style.transition = "transform 4s linear, opacity 4s linear";
+
+        document.body.appendChild(confetti);
+
+        setTimeout(() => {
+            confetti.style.transform = "translateY(110vh) rotate(720deg)";
+            confetti.style.opacity = "0";
+        }, 50);
+
+        setTimeout(() => {
+            confetti.remove();
+        }, 4200);
+
+    }
+
+}
+
+if (heartButton) {
+
+    heartButton.addEventListener("click", () => {
+
+        createConfetti();
+
+    });
+
+}
