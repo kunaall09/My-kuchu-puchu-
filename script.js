@@ -43,6 +43,7 @@ function checkAnswer2(){
       document.getElementById("answer2Error").innerText = "Think Again ❤️";
   }
 }  
+}
 const heartButton = document.getElementById("heartButton");
 const hiddenContent = document.getElementById("hiddenContent");
 const loveSong = document.getElementById("loveSong");
