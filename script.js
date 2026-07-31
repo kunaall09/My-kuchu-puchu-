@@ -47,7 +47,8 @@ const heartButton = document.getElementById("heartButton");
 const hiddenContent = document.getElementById("hiddenContent");
 const loveSong = document.getElementById("loveSong");
 
-heartButton.addEventListener("click", () => {
+if (heartButton) {
+    heartButton.addEventListener("click", () => {
 
     hiddenContent.style.display = "block";
 
