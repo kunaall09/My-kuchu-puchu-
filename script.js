@@ -43,7 +43,6 @@ function checkAnswer2(){
       document.getElementById("answer2Error").innerText = "Think Again ❤️";
   }
 }  
-}
 const heartButton = document.getElementById("heartButton");
 const hiddenContent = document.getElementById("hiddenContent");
 const loveSong = document.getElementById("loveSong");
@@ -60,7 +59,6 @@ if (heartButton) {
         createHearts();
         createConfetti();
     });
-}
 }
 const startDate = new Date("2023-01-01T00:00:00");
 
