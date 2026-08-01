@@ -50,17 +50,17 @@ const loveSong = document.getElementById("loveSong");
 
 if (heartButton) {
     heartButton.addEventListener("click", () => {
+        hiddenContent.style.display = "block";
 
-    hiddenContent.style.display = "block";
+        if (loveSong) {
+            loveSong.currentTime = 30;
+            loveSong.play().catch(() => {});
+        }
 
-    if (loveSong) {
-        loveSong.currentTime = 30;
-        loveSong.play();
-    }
-
-    createHearts();
-
-});
+        createHearts();
+        createConfetti();
+    });
+}
 }
 const startDate = new Date("2023-01-01T00:00:00");
 
@@ -143,15 +143,5 @@ function createConfetti() {
         }, 4200);
 
     }
-
-}
-
-if (heartButton) {
-
-    heartButton.addEventListener("click", () => {
-
-        createConfetti();
-
-    });
 
 }
